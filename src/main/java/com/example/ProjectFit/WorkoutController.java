@@ -16,16 +16,16 @@ public class WorkoutController {
     public Workout createWorkout(@RequestBody Workout workout){
         return workoutRepository.save(workout);
     }
-    @GetMapping("/search")
+    @GetMapping("/search/byType")
     public Workout getWorkoutByType(@RequestParam String type) {
         return workoutRepository.findWorkoutByType(type);
     }
-    @GetMapping("/search")
+    @GetMapping("/search/byDuration")
     public Workout getWorkoutByDuration(@RequestParam int duration) {
         return workoutRepository.findWorkoutByDuration(duration);
     }
-    @GetMapping("/search")
-    public Workout getWorkoutByMuscle(@RequestParam String muscle) {
-        return workoutRepository.findWorkoutByMuscle(muscle);
+    @GetMapping("/search/byMuscles")
+    public Workout getWorkoutByMuscle(@RequestParam List<String> muscles) {
+        return workoutRepository.findWorkoutByMuscle(muscles);
     }
 }

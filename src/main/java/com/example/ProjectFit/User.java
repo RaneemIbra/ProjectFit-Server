@@ -3,7 +3,6 @@ package com.example.ProjectFit;
 import jakarta.persistence.*;
 
 import java.time.LocalDate;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -27,17 +26,17 @@ public class User {
     @Column(name = "profile_picture", columnDefinition = "BLOB")
     private byte[] profilePicture;
     @ElementCollection
-    List<Boolean> achievments;
+    List<Boolean> achievements;
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
     @JoinColumn(name = "user_id")
-    private Map<Integer, Workout> plan = new HashMap<>();
+    private Map<Integer, Workout> plan;
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
     @JoinColumn(name = "user_id")
-    private Map<Integer, Workout> workoutHistory = new HashMap<>();
+    private Map<Integer, Workout> workoutHistory;
     @ElementCollection
-    private Map<LocalDate, Integer> stepsHistory = new HashMap<>();
+    private Map<LocalDate, Integer> stepsHistory;
     @ElementCollection
-    private Map<LocalDate, Integer> waterHistory = new HashMap<>();
+    private Map<LocalDate, Integer> waterHistory;
 
     public Long getId() {
         return id;
@@ -136,11 +135,11 @@ public class User {
     }
 
     public List<Boolean> getAchievments() {
-        return achievments;
+        return achievements;
     }
 
     public void setAchievments(List<Boolean> achievments) {
-        this.achievments = achievments;
+        this.achievements = achievments;
     }
 
     public Map<Integer, Workout> getPlan() {
