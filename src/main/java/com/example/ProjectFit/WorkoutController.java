@@ -10,22 +10,29 @@ import java.util.List;
 public class WorkoutController {
     @Autowired
     private WorkoutRepository workoutRepository;
+
     @GetMapping
-    public List<Workout> getAllWorkouts() {return workoutRepository.findAll();}
+    public List<Workout> getAllWorkouts() {
+        return workoutRepository.findAll();
+    }
+
     @PostMapping
-    public Workout createWorkout(@RequestBody Workout workout){
+    public Workout createWorkout(@RequestBody Workout workout) {
         return workoutRepository.save(workout);
     }
+
     @GetMapping("/search/byType")
     public List<Workout> getWorkoutByType(@RequestParam String type) {
-        return workoutRepository.findWorkoutByType(type);
+        return workoutRepository.findWorkoutsByWorkoutType(type);
     }
+
     @GetMapping("/search/byDuration")
     public List<Workout> getWorkoutByDuration(@RequestParam int duration) {
-        return workoutRepository.findWorkoutByDuration(duration);
+        return workoutRepository.findWorkoutsByDurationInMinutes(duration);
     }
+
     @GetMapping("/search/byMuscles")
     public List<Workout> getWorkoutByMuscle(@RequestParam List<String> muscles) {
-        return workoutRepository.findWorkoutByMuscle(muscles);
+        return workoutRepository.findWorkoutsByMusclesIn(muscles);
     }
 }
