@@ -35,4 +35,8 @@ public class WorkoutController {
     public List<Workout> getWorkoutByMuscle(@RequestParam List<String> muscles) {
         return workoutRepository.findWorkoutsByMusclesIn(muscles);
     }
+    @GetMapping("/search/byDifficulty")
+    public List<Workout> getWorkoutByDifficulty(@RequestParam int difficulty) {
+        return workoutRepository.findWorkoutsByDifficulty(difficulty);
+    }
 }

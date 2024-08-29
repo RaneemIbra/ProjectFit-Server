@@ -14,6 +14,7 @@ public class Workout {
     int durationInMinutes;
     String workoutType;
     String workoutDescription;
+    int difficulty;
     @ElementCollection
     List<String> muscles;
     @Lob
@@ -31,6 +32,14 @@ public class Workout {
 
     public Long getId() {
         return id;
+    }
+
+    public int getDifficulty() {
+        return difficulty;
+    }
+
+    public void setDifficulty(int difficulty) {
+        this.difficulty = difficulty;
     }
 
     public List<String> getMuscles() {
