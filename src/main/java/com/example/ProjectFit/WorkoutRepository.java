@@ -6,12 +6,11 @@ import java.util.List;
 
 public interface WorkoutRepository extends JpaRepository<Workout, Long> {
 
-    // Find by workout type
     List<Workout> findWorkoutsByWorkoutType(String workoutType);
 
-    // Find by duration in minutes
     List<Workout> findWorkoutsByDurationInMinutes(int durationInMinutes);
 
-    // Find by muscles involved (using 'In' keyword to check any match in the list)
+    //filter by muscles needs to be fixed
     List<Workout> findWorkoutsByMusclesIn(List<String> muscles);
+    List<Workout> findWorkoutsByDifficulty(int difficulty);
 }
