@@ -1,4 +1,4 @@
-package com.example.ProjectFit;
+package com.example.ProjectFit.Entities;
 
 import jakarta.persistence.*;
 
