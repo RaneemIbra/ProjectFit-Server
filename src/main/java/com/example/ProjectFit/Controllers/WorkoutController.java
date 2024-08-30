@@ -1,5 +1,7 @@
-package com.example.ProjectFit;
+package com.example.ProjectFit.Controllers;
 
+import com.example.ProjectFit.Entities.Workout;
+import com.example.ProjectFit.Repositories.WorkoutRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

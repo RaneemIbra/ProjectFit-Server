@@ -1,5 +1,7 @@
-package com.example.ProjectFit;
+package com.example.ProjectFit.Controllers;
 
+import com.example.ProjectFit.Entities.Question;
+import com.example.ProjectFit.Repositories.QuestionRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;

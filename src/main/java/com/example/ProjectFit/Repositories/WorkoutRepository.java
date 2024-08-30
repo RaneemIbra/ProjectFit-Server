@@ -1,5 +1,6 @@
-package com.example.ProjectFit;
+package com.example.ProjectFit.Repositories;
 
+import com.example.ProjectFit.Entities.Workout;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;

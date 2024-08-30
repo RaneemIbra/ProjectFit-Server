@@ -1,5 +1,7 @@
-package com.example.ProjectFit;
+package com.example.ProjectFit.Controllers;
 
+import com.example.ProjectFit.Entities.User;
+import com.example.ProjectFit.Repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
