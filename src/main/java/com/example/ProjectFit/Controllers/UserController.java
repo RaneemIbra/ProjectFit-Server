@@ -26,18 +26,42 @@ public class UserController {
 
         if (userOptional.isPresent()) {
             User user = userOptional.get();
-            user.setFullName(userDetails.getFullName());
-            user.setPhoneNum(userDetails.getPhoneNum());
-            user.setEmailAddress(userDetails.getEmailAddress());
-            user.setPassword(userDetails.getPassword());
-            user.setHeight(userDetails.getHeight());
-            user.setWeight(userDetails.getWeight());
-            user.setProfilePicture(userDetails.getProfilePicture());
-            user.setAchievments(userDetails.getAchievments());
-            user.setPlan(userDetails.getPlan());
-            user.setWorkoutHistory(userDetails.getWorkoutHistory());
-            user.setStepsHistory(userDetails.getStepsHistory());
-            user.setWaterHistory(userDetails.getWaterHistory());
+            if (userDetails.getFullName() != null) {
+                user.setFullName(userDetails.getFullName());
+            }
+            if (userDetails.getPhoneNum() != null) {
+                user.setPhoneNum(userDetails.getPhoneNum());
+            }
+            if (userDetails.getEmailAddress() != null) {
+                user.setEmailAddress(userDetails.getEmailAddress());
+            }
+            if (userDetails.getPassword() != null) {
+                user.setPassword(userDetails.getPassword());
+            }
+            if (userDetails.getHeight() != 0) {
+                user.setHeight(userDetails.getHeight());
+            }
+            if (userDetails.getWeight()!=0) {
+                user.setWeight(userDetails.getWeight());
+            }
+            if (userDetails.getProfilePicture() != null) {
+                user.setProfilePicture(userDetails.getProfilePicture());
+            }
+            if (userDetails.getAchievments() != null) {
+                user.setAchievments(userDetails.getAchievments());
+            }
+            if (userDetails.getPlan() != null) {
+                user.setPlan(userDetails.getPlan());
+            }
+            if (userDetails.getWorkoutHistory() != null) {
+                user.setWorkoutHistory(userDetails.getWorkoutHistory());
+            }
+            if (userDetails.getStepsHistory() != null) {
+                user.setStepsHistory(userDetails.getStepsHistory());
+            }
+            if (userDetails.getWaterHistory() != null) {
+                user.setWaterHistory(userDetails.getWaterHistory());
+            }
 
             User updatedUser = userRepository.save(user);
             return ResponseEntity.ok(updatedUser);
@@ -45,4 +69,5 @@ public class UserController {
             return ResponseEntity.notFound().build();
         }
     }
+
 }
