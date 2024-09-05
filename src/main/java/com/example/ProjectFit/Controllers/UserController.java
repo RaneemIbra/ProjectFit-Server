@@ -26,41 +26,9 @@ public class UserController {
 
         if (userOptional.isPresent()) {
             User user = userOptional.get();
-            if (userDetails.getFullName() != null) {
-                user.setFullName(userDetails.getFullName());
-            }
-            if (userDetails.getPhoneNum() != null) {
-                user.setPhoneNum(userDetails.getPhoneNum());
-            }
-            if (userDetails.getEmailAddress() != null) {
-                user.setEmailAddress(userDetails.getEmailAddress());
-            }
-            if (userDetails.getPassword() != null) {
+            if (userDetails.getPassword() != null && !userDetails.getPassword().isEmpty()) {
                 user.setPassword(userDetails.getPassword());
-            }
-            if (userDetails.getHeight() != 0) {
-                user.setHeight(userDetails.getHeight());
-            }
-            if (userDetails.getWeight()!=0) {
-                user.setWeight(userDetails.getWeight());
-            }
-            if (userDetails.getProfilePicture() != null) {
-                user.setProfilePicture(userDetails.getProfilePicture());
-            }
-            if (userDetails.getAchievments() != null) {
-                user.setAchievments(userDetails.getAchievments());
-            }
-            if (userDetails.getPlan() != null) {
-                user.setPlan(userDetails.getPlan());
-            }
-            if (userDetails.getWorkoutHistory() != null) {
-                user.setWorkoutHistory(userDetails.getWorkoutHistory());
-            }
-            if (userDetails.getStepsHistory() != null) {
-                user.setStepsHistory(userDetails.getStepsHistory());
-            }
-            if (userDetails.getWaterHistory() != null) {
-                user.setWaterHistory(userDetails.getWaterHistory());
+                System.out.println("Password updated to: " + userDetails.getPassword());
             }
 
             User updatedUser = userRepository.save(user);
