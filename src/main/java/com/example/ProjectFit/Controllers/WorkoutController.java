@@ -20,6 +20,9 @@ public class WorkoutController {
 
     @PostMapping
     public Workout createWorkout(@RequestBody Workout workout) {
+        if (workout.getWorkoutImage() != null && !workout.getWorkoutImage().isEmpty()) {
+            System.out.println("Workout Image received: " + workout.getWorkoutImage());
+        }
         return workoutRepository.save(workout);
     }
 

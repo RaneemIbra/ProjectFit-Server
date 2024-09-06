@@ -18,14 +18,14 @@ public class Workout {
     @ElementCollection
     List<String> muscles;
     @Lob
-    @Column(name = "workout_image", columnDefinition = "BLOB")
-    private byte[] workoutImage;
+    @Column(name = "workout_image", columnDefinition = "TEXT")
+    private String workoutImage;
     @Lob
-    @Column(name = "profile_icon", columnDefinition = "BLOB")
-    private byte[] profileIcon;
+    @Column(name = "workout_icon", columnDefinition = "TEXT")
+    private String workoutIcon;
     @Lob
-    @Column(name = "workout_animation", columnDefinition = "BLOB")
-    private byte[] workoutAnimation;
+    @Column(name = "workout_animation", columnDefinition = "TEXT")
+    private String workoutAnimation;
     int calories;
     @ElementCollection
     List<Integer> sets_reps;
@@ -86,27 +86,27 @@ public class Workout {
         this.workoutDescription = workoutDescription;
     }
 
-    public byte[] getWorkoutImage() {
+    public String getWorkoutImage() {
         return workoutImage;
     }
 
-    public void setWorkoutImage(byte[] workoutImage) {
+    public void setWorkoutImage(String workoutImage) {
         this.workoutImage = workoutImage;
     }
 
-    public byte[] getProfileIcon() {
-        return profileIcon;
+    public String getWorkoutIcon() {
+        return workoutIcon;
     }
 
-    public void setProfileIcon(byte[] profileIcon) {
-        this.profileIcon = profileIcon;
+    public void setWorkoutIcon(String workoutIcon) {
+        this.workoutIcon = workoutIcon;
     }
 
-    public byte[] getWorkoutAnimation() {
+    public String getWorkoutAnimation() {
         return workoutAnimation;
     }
 
-    public void setWorkoutAnimation(byte[] workoutAnimation) {
+    public void setWorkoutAnimation(String workoutAnimation) {
         this.workoutAnimation = workoutAnimation;
     }
 
