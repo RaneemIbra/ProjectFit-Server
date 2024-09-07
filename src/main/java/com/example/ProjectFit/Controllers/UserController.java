@@ -26,6 +26,8 @@ public class UserController {
 
         if (userOptional.isPresent()) {
             User user = userOptional.get();
+            System.out.println("Found user with ID: " + id);
+
             if (userDetails.getPassword() != null && !userDetails.getPassword().isEmpty()) {
                 user.setPassword(userDetails.getPassword());
                 System.out.println("Password updated to: " + userDetails.getPassword());
@@ -34,8 +36,8 @@ public class UserController {
             User updatedUser = userRepository.save(user);
             return ResponseEntity.ok(updatedUser);
         } else {
+            System.out.println("User not found with ID: " + id);
             return ResponseEntity.notFound().build();
         }
     }
-
 }
