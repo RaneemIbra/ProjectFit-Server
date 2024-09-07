@@ -17,15 +17,9 @@ public class Workout {
     int difficulty;
     @ElementCollection
     List<String> muscles;
-    @Lob
-    @Column(name = "workout_image", columnDefinition = "TEXT")
-    private String workoutImage;
-    @Lob
-    @Column(name = "workout_icon", columnDefinition = "TEXT")
-    private String workoutIcon;
-    @Lob
-    @Column(name = "workout_animation", columnDefinition = "TEXT")
-    private String workoutAnimation;
+
+    int workoutImageID;
+    int workoutLogoID;
     int calories;
     @ElementCollection
     List<Integer> sets_reps;
@@ -48,6 +42,14 @@ public class Workout {
 
     public void setMuscles(List<String> muscles) {
         this.muscles = muscles;
+    }
+
+    public int getWorkoutLogoID() {
+        return workoutLogoID;
+    }
+
+    public void setWorkoutLogoID(int workoutLogoID) {
+        this.workoutLogoID = workoutLogoID;
     }
 
     public void setId(Long id) {
@@ -86,28 +88,12 @@ public class Workout {
         this.workoutDescription = workoutDescription;
     }
 
-    public String getWorkoutImage() {
-        return workoutImage;
+    public int getWorkoutImageID() {
+        return workoutImageID;
     }
 
-    public void setWorkoutImage(String workoutImage) {
-        this.workoutImage = workoutImage;
-    }
-
-    public String getWorkoutIcon() {
-        return workoutIcon;
-    }
-
-    public void setWorkoutIcon(String workoutIcon) {
-        this.workoutIcon = workoutIcon;
-    }
-
-    public String getWorkoutAnimation() {
-        return workoutAnimation;
-    }
-
-    public void setWorkoutAnimation(String workoutAnimation) {
-        this.workoutAnimation = workoutAnimation;
+    public void setWorkoutImageID(int workoutImageID) {
+        this.workoutImageID = workoutImageID;
     }
 
     public int getCalories() {
