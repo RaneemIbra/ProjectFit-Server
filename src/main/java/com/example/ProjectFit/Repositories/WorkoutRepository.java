@@ -11,7 +11,6 @@ public interface WorkoutRepository extends JpaRepository<Workout, Long> {
 
     List<Workout> findWorkoutsByDurationInMinutes(int durationInMinutes);
 
-    //filter by muscles needs to be fixed
     List<Workout> findWorkoutsByMusclesIn(List<String> muscles);
     List<Workout> findWorkoutsByDifficulty(int difficulty);
 }

@@ -18,8 +18,9 @@ public class Workout {
     @ElementCollection
     List<String> muscles;
 
-    int workoutImageID;
-    int workoutLogoID;
+    int workoutImageResId;
+    int workoutLogoResId;
+    int workoutGifResId;
     int calories;
     @ElementCollection
     List<Integer> sets_reps;
@@ -45,11 +46,19 @@ public class Workout {
     }
 
     public int getWorkoutLogoID() {
-        return workoutLogoID;
+        return workoutLogoResId;
+    }
+
+    public int getWorkoutGif() {
+        return workoutGifResId;
+    }
+
+    public void setWorkoutGif(int workoutGif) {
+        this.workoutGifResId = workoutGif;
     }
 
     public void setWorkoutLogoID(int workoutLogoID) {
-        this.workoutLogoID = workoutLogoID;
+        this.workoutLogoResId = workoutLogoID;
     }
 
     public void setId(Long id) {
@@ -89,11 +98,11 @@ public class Workout {
     }
 
     public int getWorkoutImageID() {
-        return workoutImageID;
+        return workoutImageResId;
     }
 
     public void setWorkoutImageID(int workoutImageID) {
-        this.workoutImageID = workoutImageID;
+        this.workoutImageResId = workoutImageID;
     }
 
     public int getCalories() {
