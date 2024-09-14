@@ -27,9 +27,10 @@ public class User {
     private byte[] profilePicture;
     @ElementCollection
     List<Boolean> achievements;
-    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
-    @JoinColumn(name = "user_id")
-    private Map<Integer, Workout> plan;
+    boolean buildPlan;
+    @ElementCollection
+    List<String> answers;
+    String plan;
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
     @JoinColumn(name = "user_id")
     private Map<Integer, Workout> workoutHistory;
@@ -64,6 +65,30 @@ public class User {
 
     public String getEmailAddress() {
         return emailAddress;
+    }
+
+    public List<Boolean> getAchievements() {
+        return achievements;
+    }
+
+    public void setAchievements(List<Boolean> achievements) {
+        this.achievements = achievements;
+    }
+
+    public boolean isBuildPlan() {
+        return buildPlan;
+    }
+
+    public List<String> getAnswers() {
+        return answers;
+    }
+
+    public void setAnswers(List<String> answers) {
+        this.answers = answers;
+    }
+
+    public void setBuildPlan(boolean buildPlan) {
+        this.buildPlan = buildPlan;
     }
 
     public void setEmailAddress(String emailAddress) {
@@ -142,11 +167,11 @@ public class User {
         this.achievements = achievments;
     }
 
-    public Map<Integer, Workout> getPlan() {
+    public String getPlan() {
         return plan;
     }
 
-    public void setPlan(Map<Integer, Workout> plan) {
+    public void setPlan(String plan) {
         this.plan = plan;
     }
 

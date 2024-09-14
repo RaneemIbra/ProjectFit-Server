@@ -1,12 +1,14 @@
 package com.example.ProjectFit.Controllers;
 
 import com.example.ProjectFit.Entities.User;
+import com.example.ProjectFit.Entities.Workout;
 import com.example.ProjectFit.Repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 
 @RestController
@@ -40,4 +42,30 @@ public class UserController {
             return ResponseEntity.notFound().build();
         }
     }
+
+    @GetMapping("/email/{emailAddress}")
+    public ResponseEntity<User> getUserByEmail(@PathVariable String emailAddress) {
+        Optional<User> userOptional = userRepository.findByEmailAddress(emailAddress);
+
+        if (userOptional.isPresent()) {
+            return ResponseEntity.ok(userOptional.get());
+        } else {
+            return ResponseEntity.notFound().build();
+        }
+    }
+
+    @PutMapping("/{id}/plan")
+    public ResponseEntity<User> updatePlan(@PathVariable Long id, @RequestBody String plan) {
+        Optional<User> userOptional = userRepository.findById(id);
+
+        if (userOptional.isPresent()) {
+            User user = userOptional.get();
+            user.setPlan(plan);
+            User updatedUser = userRepository.save(user);
+            return ResponseEntity.ok(updatedUser);
+        } else {
+            return ResponseEntity.notFound().build();
+        }
+    }
+
 }

@@ -24,6 +24,7 @@ public class Workout {
     int calories;
     @ElementCollection
     List<Integer> sets_reps;
+    int sets;
 
     public Long getId() {
         return id;
@@ -35,6 +36,14 @@ public class Workout {
 
     public void setDifficulty(int difficulty) {
         this.difficulty = difficulty;
+    }
+
+    public int getSets() {
+        return sets;
+    }
+
+    public void setSets(int sets) {
+        this.sets = sets;
     }
 
     public List<String> getMuscles() {
