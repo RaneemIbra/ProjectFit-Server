@@ -27,6 +27,34 @@ public class User {
     private byte[] profilePicture;
     @ElementCollection
     List<Boolean> achievements;
+
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
+    @JoinColumn(name = "user_id")
+    private List<Workout> sundayList;
+
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
+    @JoinColumn(name = "user_id")
+    private List<Workout> mondayList;
+
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
+    @JoinColumn(name = "user_id")
+    private List<Workout> tuesdayList;
+
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
+    @JoinColumn(name = "user_id")
+    private List<Workout> wednesdayList;
+
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
+    @JoinColumn(name = "user_id")
+    private List<Workout> thursdayList;
+
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
+    @JoinColumn(name = "user_id")
+    private List<Workout> fridayList;
+
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
+    @JoinColumn(name = "user_id")
+    private List<Workout> saturdayList;
     boolean buildPlan;
     @ElementCollection
     List<String> answers;
@@ -49,6 +77,62 @@ public class User {
 
     public String getFullName() {
         return fullName;
+    }
+
+    public List<Workout> getSundayList() {
+        return sundayList;
+    }
+
+    public void setSundayList(List<Workout> sundayList) {
+        this.sundayList = sundayList;
+    }
+
+    public List<Workout> getMondayList() {
+        return mondayList;
+    }
+
+    public void setMondayList(List<Workout> mondayList) {
+        this.mondayList = mondayList;
+    }
+
+    public List<Workout> getTuesdayList() {
+        return tuesdayList;
+    }
+
+    public void setTuesdayList(List<Workout> tuesdayList) {
+        this.tuesdayList = tuesdayList;
+    }
+
+    public List<Workout> getWednesdayList() {
+        return wednesdayList;
+    }
+
+    public void setWednesdayList(List<Workout> wednesdayList) {
+        this.wednesdayList = wednesdayList;
+    }
+
+    public List<Workout> getThursdayList() {
+        return thursdayList;
+    }
+
+    public void setThursdayList(List<Workout> thursdayList) {
+        this.thursdayList = thursdayList;
+    }
+
+    public List<Workout> getFridayList() {
+        return fridayList;
+    }
+
+    public void setFridayList(List<Workout> fridayList) {
+        this.fridayList = fridayList;
+    }
+
+    public List<Workout> getSaturdayList() {
+        return saturdayList;
+    }
+
+    public void setSaturdayList(List<Workout> saturdayList) {
+        this.saturdayList = saturdayList;
     }
 
     public void setFullName(String fullName) {
